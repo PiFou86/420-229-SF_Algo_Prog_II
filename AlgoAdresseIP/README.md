@@ -1,0 +1,5 @@
+- Les tests unitaires ne sont pas complets :
+   - Validations des paramètres
+   - Validations de certaines méthodes
+   - Validations de certaines classes (dont InterfacesReseau)
+- L'application des régles sur les normes IPv4 n'est pas rigoureuse et sert simplement d'exemple en algorithmie

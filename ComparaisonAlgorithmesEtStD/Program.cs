@@ -38,14 +38,9 @@ namespace ComparaisonAlgorithmesEtStD
                 lstTemps.Add(nbValeur, new List<long>());
             }
 
-            // Appel des différentes méthodes à tester
-            TestTableauVariableInsererFinCasIdeal(colNbValeurs, 100, lstTemps);
-            TestTableauVariableInsererFinPireCas(colNbValeurs, 100, lstTemps);
-            TestTableauVariableInsererDebut(colNbValeurs, 100, lstTemps);
-
-            TestListeChaineeCSharpInsererFinCasIdeal(colNbValeurs, 100, lstTemps);
-            TestListeChaineeCSharpInsererFinPireCas(colNbValeurs, 100, lstTemps);
-            TestListeChaineeCSharpInsererDebut(colNbValeurs, 100, lstTemps);
+            // Choisir le test à effectuer
+            //TestsStdTableauVariable_ListInserer(colNbValeurs, 100, lstTemps);
+            TestsFusionnerDeuxListesTriees(colNbValeurs, 100, lstTemps);
 
             // Affichage des stats pour gnuplot
             foreach (var nbValeur in colNbValeurs)
@@ -54,6 +49,54 @@ namespace ComparaisonAlgorithmesEtStD
             }
 
             Console.ReadKey();
+        }
+
+        private static void TestsFusionnerDeuxListesTriees(int[] p_nbValeurs, int p_nbTests, Dictionary<int, List<long>> p_lstTemps)
+        {
+            TestFusionnerDeuxListesTrieesV1(p_nbValeurs, p_nbTests, p_lstTemps);
+            TestFusionnerDeuxListesTrieesV2(p_nbValeurs, p_nbTests, p_lstTemps);
+        }
+
+
+        private static void TestFusionnerDeuxListesTrieesV1(int[] p_nbValeurs, int p_nbTests, Dictionary<int, List<long>> p_lstTemps)
+        {
+            MesureMedianAppel(p_nbValeurs, p_nbTests, p_lstTemps,
+                nbValeurs =>
+                {
+                    List<int> lst1 = CreerListeAleatoire(nbValeurs, false); lst1.Sort();
+                    List<int> lst2 = CreerListeAleatoire(nbValeurs, false); lst2.Sort();
+                    return Tuple.Create(lst1, lst2);
+                },
+                (lst) =>
+                {
+                    FusionListeUtilitaire<int>.FusionnerDeuxListesTrieesV1(lst.Item1, lst.Item2);
+                });
+        }
+
+        private static void TestFusionnerDeuxListesTrieesV2(int[] p_nbValeurs, int p_nbTests, Dictionary<int, List<long>> p_lstTemps)
+        {
+            MesureMedianAppel(p_nbValeurs, p_nbTests, p_lstTemps,
+                nbValeurs =>
+                {
+                    List<int> lst1 = CreerListeAleatoire(nbValeurs, false); lst1.Sort();
+                    List<int> lst2 = CreerListeAleatoire(nbValeurs, false); lst2.Sort();
+                    return Tuple.Create(lst1, lst2);
+                },
+                (lst) =>
+                {
+                    FusionListeUtilitaire<int>.FusionnerDeuxListesTrieesV2(lst.Item1, lst.Item2);
+                });
+        }
+
+        private static void TestsStdTableauVariable_ListInserer(int[] p_nbValeurs, int p_nbTests, Dictionary<int, List<long>> p_lstTemps)
+        {
+            TestTableauVariableInsererFinCasIdeal(p_nbValeurs, p_nbTests, p_lstTemps);
+            TestTableauVariableInsererFinPireCas(p_nbValeurs, p_nbTests, p_lstTemps);
+            TestTableauVariableInsererDebut(p_nbValeurs, p_nbTests, p_lstTemps);
+
+            TestListeChaineeCSharpInsererFinCasIdeal(p_nbValeurs, p_nbTests, p_lstTemps);
+            TestListeChaineeCSharpInsererFinPireCas(p_nbValeurs, p_nbTests, p_lstTemps);
+            TestListeChaineeCSharpInsererDebut(p_nbValeurs, p_nbTests, p_lstTemps);
         }
 
         private static void TestTableauVariableInsererFinCasIdeal(int[] p_nbValeurs, int p_nbTests, Dictionary<int, List<long>> p_lstTemps)

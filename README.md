@@ -1,6 +1,6 @@
 # 420-229-SF_Algo_Prog_II
-Les codes donnés ici sont à visée pédagogique et accompagne des modules de formations :
-  - certains codes sont écrits rapidement pour démontrer certains points
-  - toutes les notions ne sont pas vues, donc le code pourrait être écrit différement et amélioré
+Les codes donnÃ©s ici sont Ã  visÃ©e pÃ©dagogique et accompagne des modules de formations :
+  - certains codes sont Ã©crits rapidement pour dÃ©montrer certains points
+  - toutes les notions ne sont pas abordÃ©es dans ce cours, donc le code pourrait Ãªtre Ã©crit diffÃ©rement et amÃ©liorÃ©
 
-Les codes donnés ne doivent pas être utilisés en production.
+Les codes donnÃ©s ne doivent pas Ãªtre utilisÃ©s en production.

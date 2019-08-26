@@ -21,7 +21,7 @@ namespace ArbrePrefixe
                 "zzz"
             };
 
-            foreach (var prefixeACompleter in lstPrefixeATrouver)
+            foreach (string prefixeACompleter in lstPrefixeATrouver)
             {
                 Console.Out.WriteLine($"Complétion pour {prefixeACompleter}");
                 List<string> lstPrefixesNe = trie.CompleterPrefixeV3(prefixeACompleter);

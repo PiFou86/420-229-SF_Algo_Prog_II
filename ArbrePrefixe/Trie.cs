@@ -105,7 +105,7 @@ namespace ArbrePrefixe
         private void ParcoursPrefixe(NoeudTrie p_noeudPrefixe, Action<char, string, bool> p_visiter)
         {
             p_visiter(p_noeudPrefixe.Lettre, p_noeudPrefixe.ValeurPrefixe, p_noeudPrefixe.EstMotValide);
-            foreach (var enfant in p_noeudPrefixe.Enfants)
+            foreach (NoeudTrie enfant in p_noeudPrefixe.Enfants)
             {
                 ParcoursPrefixe(enfant, p_visiter);
             }
@@ -120,7 +120,7 @@ namespace ArbrePrefixe
                 res.Add(p_noeudPrefixe.ValeurPrefixe);
             }
 
-            foreach (var enfant in p_noeudPrefixe.Enfants)
+            foreach (NoeudTrie enfant in p_noeudPrefixe.Enfants)
             {
                 res.AddRange(CollecterMotsV1(enfant));
             }
@@ -134,7 +134,7 @@ namespace ArbrePrefixe
                 p_lisetMots.Add(p_noeudPrefixe.ValeurPrefixe);
             }
 
-            foreach (var enfant in p_noeudPrefixe.Enfants)
+            foreach (NoeudTrie enfant in p_noeudPrefixe.Enfants)
             {
                 CollecterMotsV2(enfant, p_lisetMots);
             }

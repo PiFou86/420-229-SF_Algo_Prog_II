@@ -27,11 +27,12 @@ namespace ArbreBinaire.ABREntier
 
         private void AjouterEntier(int p_valeur, NoeudArbreBinaireEntier p_noeud)
         {
+            // Si on ne veut pas de doublons, laisser la condition suite
             if (p_valeur == p_noeud.Valeur)
             {
                 return;
             }
-            if (p_valeur < p_noeud.Valeur)
+            if (p_valeur <= p_noeud.Valeur)
             {
                 if (p_noeud.Gauche == null)
                 {

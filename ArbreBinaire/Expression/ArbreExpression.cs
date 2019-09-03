@@ -133,6 +133,27 @@ namespace ArbreBinaire.Expression
 
         private decimal Evaluer(NoeudArbreExpression p_noeud)
         {
+            //if (p_noeud.TypeNoeud == TypeNoeudArbreExpression.Operation) {
+            //    if (p_noeud.Gauche == null || p_noeud.Droite == null)
+            //    {
+            //        throw new ArgumentException("Noeud incohérent", "p_noeud");
+            //    }
+            //    return EvaluerOperation(p_noeud);
+            //} else if (p_noeud.TypeNoeud == TypeNoeudArbreExpression.Valeur)
+            //{
+            //    if (p_noeud.Gauche != null || p_noeud.Droite != null)
+            //    {
+            //        throw new ArgumentException("Noeud incohérent", "p_noeud");
+            //    }
+            //    return p_noeud.Valeur;
+            //}
+            //else
+            //{
+            //    throw new InvalidProgramException();
+            //}
+
+            // <=>
+
             switch (p_noeud.TypeNoeud)
             {
                 case TypeNoeudArbreExpression.Operation:

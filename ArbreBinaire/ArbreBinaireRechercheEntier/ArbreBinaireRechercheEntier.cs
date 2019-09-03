@@ -68,7 +68,7 @@ namespace ArbreBinaire.ABREntier
                 return true;
             }
 
-            if (p_noeud.Valeur < p_valeur)
+            if (p_valeur < p_noeud.Valeur)
             {
                 return RechercherEntier(p_valeur, p_noeud.Gauche);
             }

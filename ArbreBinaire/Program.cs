@@ -10,8 +10,8 @@ namespace ArbreBinaire
         static void Main(string[] args)
         {
             //DemoArbreBinaireExpressionV1();
-            //DemoArbreBinaireRechercheEntier();
-            DemoArbreExpression();
+            DemoArbreBinaireRechercheEntier();
+            //DemoArbreExpression();
         }
 
         static void DemoArbreBinaireExpressionV1()
